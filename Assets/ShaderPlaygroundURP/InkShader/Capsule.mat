@@ -109,6 +109,7 @@ Material:
     - _Blend: 0
     - _BlendHeight: 0
     - _BlendNoise: 0.879
+    - _BlendScale: 1.7
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -123,14 +124,14 @@ Material:
     - _GlossyReflections: 0
     - _HeightIntensity: 0
     - _InkAO: 1
-    - _InkBasePower: 0.226
-    - _InkBasePower_1: 0.965
+    - _InkBasePower: 0.176
+    - _InkBasePower_1: 1
     - _InkIntensity: 0.889
-    - _InkMetallic: 0
-    - _InkNormalStrength: 0.763
+    - _InkMetallic: 0.049
+    - _InkNormalStrength: 0.59
     - _InkPower: 0.184
-    - _InkSmoothness: 0.965
-    - _InkThreshold: 0.5
+    - _InkSmoothness: 0.909
+    - _InkThreshold: 0.373
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -151,6 +152,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _InkColor: {r: 1, g: 0.3940722, b: 0, a: 0}
     - _InkTile: {r: 0.6, g: 0.3, b: 0, a: 0}
-    - _Scroll: {r: 0, g: 0.05, b: 0, a: 0}
+    - _Scroll: {r: 0.01, g: 0.05, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

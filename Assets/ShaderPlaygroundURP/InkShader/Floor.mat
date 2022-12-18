@@ -109,6 +109,7 @@ Material:
     - _Blend: 0
     - _BlendHeight: 0
     - _BlendNoise: 0.135
+    - _BlendScale: 6.21
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -127,10 +128,10 @@ Material:
     - _InkBasePower_1: 1
     - _InkIntensity: 0.778
     - _InkMetallic: 0
-    - _InkNormalStrength: 1
+    - _InkNormalStrength: 0.07
     - _InkPower: 0.184
-    - _InkSmoothness: 0.747
-    - _InkThreshold: 0.504
+    - _InkSmoothness: 0.793
+    - _InkThreshold: 0.238
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -149,7 +150,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _InkColor: {r: 0, g: 0.16466069, b: 1, a: 0}
+    - _InkColor: {r: 0.088843346, g: 0, b: 1, a: 0}
     - _InkTile: {r: 1, g: 1, b: 0, a: 0}
     - _Scroll: {r: 0.04, g: 0.04, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

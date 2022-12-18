@@ -121,7 +121,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _HeightIntensity: 0.19
+    - _HeightIntensity: 0
     - _InkAO: 1
     - _InkBasePower: 0.226
     - _InkBasePower_1: 0.965

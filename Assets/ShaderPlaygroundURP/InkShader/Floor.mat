@@ -121,16 +121,16 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _HeightIntensity: 0.49
+    - _HeightIntensity: 0
     - _InkAO: 1
-    - _InkBasePower: 0.105
+    - _InkBasePower: 0.146
     - _InkBasePower_1: 1
     - _InkIntensity: 0.778
     - _InkMetallic: 0
-    - _InkNormalStrength: 0.944
+    - _InkNormalStrength: 1
     - _InkPower: 0.184
     - _InkSmoothness: 0.747
-    - _InkThreshold: 0.292
+    - _InkThreshold: 0.504
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005

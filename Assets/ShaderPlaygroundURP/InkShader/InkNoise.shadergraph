@@ -235,8 +235,28 @@
             "m_Id": "9d43d86286b5492eb0e25c0fc1de3ed3"
         }
     ],
-    "m_GroupDatas": [],
-    "m_StickyNoteDatas": [],
+    "m_GroupDatas": [
+        {
+            "m_Id": "a93734698c1a401a9a3d5d58f93a5cdb"
+        },
+        {
+            "m_Id": "3406849d913c4590aff16fbf36de788e"
+        },
+        {
+            "m_Id": "f86066d0eb4c44b5a8a23825d18e6beb"
+        }
+    ],
+    "m_StickyNoteDatas": [
+        {
+            "m_Id": "16507b8078f34f14a334c1cc3a319c3a"
+        },
+        {
+            "m_Id": "9d78c6850ea74e35bf8b773ff5a6aeba"
+        },
+        {
+            "m_Id": "3144d43ea9934fe3bc5826620044adfc"
+        }
+    ],
     "m_Edges": [
         {
             "m_OutputSlot": {
@@ -1171,7 +1191,7 @@
     "m_Type": "UnityEditor.ShaderGraph.MultiplyNode",
     "m_ObjectId": "01b450accad14672af33bf2abdfae527",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "f86066d0eb4c44b5a8a23825d18e6beb"
     },
     "m_Name": "Multiply",
     "m_DrawState": {
@@ -1540,7 +1560,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 0.5,
+    "m_Value": 0.6499999761581421,
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
@@ -1650,6 +1670,26 @@
 }
 
 {
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "16507b8078f34f14a334c1cc3a319c3a",
+    "m_Title": "インクのしきい値",
+    "m_Content": "高さマップを使って溝の部分にインクが出やすくする",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -2775.0,
+        "y": 995.0,
+        "width": 200.0,
+        "height": 100.0
+    },
+    "m_Group": {
+        "m_Id": "f86066d0eb4c44b5a8a23825d18e6beb"
+    }
+}
+
+{
     "m_SGVersion": 1,
     "m_Type": "UnityEditor.ShaderGraph.Internal.Vector2ShaderProperty",
     "m_ObjectId": "174345990a6e4ac1a1f42d282578054a",
@@ -1669,8 +1709,8 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
+        "x": 0.03999999910593033,
+        "y": 0.03999999910593033,
         "z": 0.0,
         "w": 0.0
     }
@@ -2103,7 +2143,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 0.009999999776482582,
+    "m_Value": 0.20000000298023225,
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
@@ -2116,17 +2156,17 @@
     "m_Type": "UnityEditor.ShaderGraph.MultiplyNode",
     "m_ObjectId": "2a3e68e094514fdfbdc72a203f2c5c53",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "3406849d913c4590aff16fbf36de788e"
     },
     "m_Name": "Multiply",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -4201.0,
-            "y": -271.0,
-            "width": 208.000244140625,
-            "height": 302.0001220703125
+            "x": -4353.0,
+            "y": -253.0000457763672,
+            "width": 208.0,
+            "height": 302.00006103515627
         }
     },
     "m_Slots": [
@@ -2247,7 +2287,7 @@
     "m_Type": "UnityEditor.ShaderGraph.GradientNoiseNode",
     "m_ObjectId": "2f187717b77045fa8700f88ff2a24211",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "a93734698c1a401a9a3d5d58f93a5cdb"
     },
     "m_Name": "Gradient Noise",
     "m_DrawState": {
@@ -2312,6 +2352,37 @@
 }
 
 {
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "3144d43ea9934fe3bc5826620044adfc",
+    "m_Title": "ノイズを合成",
+    "m_Content": "2つのグラディエントノイズを足し算",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -3209.0,
+        "y": -125.0,
+        "width": 195.0,
+        "height": 100.0
+    },
+    "m_Group": {
+        "m_Id": "a93734698c1a401a9a3d5d58f93a5cdb"
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.GroupData",
+    "m_ObjectId": "3406849d913c4590aff16fbf36de788e",
+    "m_Title": "UV計算",
+    "m_Position": {
+        "x": -4891.0,
+        "y": -705.0
+    }
+}
+
+{
     "m_SGVersion": 1,
     "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
     "m_ObjectId": "3430ad6b83814349920b012065caef16",
@@ -2330,7 +2401,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 0.5,
+    "m_Value": 0.20000000298023225,
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
@@ -2381,7 +2452,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 0.0,
+    "m_Value": 0.13500000536441804,
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
@@ -2454,17 +2525,17 @@
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "3a79d63ef1ce4739abfacc741344669b",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "f86066d0eb4c44b5a8a23825d18e6beb"
     },
     "m_Name": "Property",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -3820.99951171875,
-            "y": 643.0000610351563,
+            "x": -3778.000244140625,
+            "y": 704.0000610351563,
             "width": 130.0,
-            "height": 33.9998779296875
+            "height": 33.99993896484375
         }
     },
     "m_Slots": [
@@ -2522,17 +2593,17 @@
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "3da6d9f06fb346249a00d153f4f89321",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "3406849d913c4590aff16fbf36de788e"
     },
     "m_Name": "Property",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -4493.0,
-            "y": 452.99993896484377,
+            "x": -4645.0,
+            "y": 470.99993896484377,
             "width": 106.0,
-            "height": 34.00018310546875
+            "height": 34.00006103515625
         }
     },
     "m_Slots": [
@@ -2778,7 +2849,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 0.5,
+    "m_Value": 0.06400000303983689,
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
@@ -2791,17 +2862,17 @@
     "m_Type": "UnityEditor.ShaderGraph.AddNode",
     "m_ObjectId": "4d634f62cecd4bb3a4188b3abd4c1f89",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "3406849d913c4590aff16fbf36de788e"
     },
     "m_Name": "Add",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -3892.999755859375,
-            "y": 144.0000762939453,
+            "x": -4044.999755859375,
+            "y": 161.99998474121095,
             "width": 130.0,
-            "height": 117.99992370605469
+            "height": 118.00001525878906
         }
     },
     "m_Slots": [
@@ -3625,7 +3696,7 @@
     "m_Type": "UnityEditor.ShaderGraph.AddNode",
     "m_ObjectId": "6fbb6b078f7149b1a2a68f0204a60caa",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "f86066d0eb4c44b5a8a23825d18e6beb"
     },
     "m_Name": "Add",
     "m_DrawState": {
@@ -3972,7 +4043,7 @@
     "m_Type": "UnityEditor.ShaderGraph.SampleTexture2DNode",
     "m_ObjectId": "85ac5294a8284825a1f151d330829355",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "f86066d0eb4c44b5a8a23825d18e6beb"
     },
     "m_Name": "Sample Texture 2D",
     "m_DrawState": {
@@ -4115,7 +4186,7 @@
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "8b9f6e178a784825bd52b180779f2ca4",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "a93734698c1a401a9a3d5d58f93a5cdb"
     },
     "m_Name": "Property",
     "m_DrawState": {
@@ -4150,17 +4221,17 @@
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "8c6029e42fde4755baca9183fb8317b1",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "3406849d913c4590aff16fbf36de788e"
     },
     "m_Name": "Property",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -4407.0,
-            "y": -163.0,
+            "x": -4559.0,
+            "y": -145.0,
             "width": 111.0,
-            "height": 34.000030517578128
+            "height": 33.999961853027347
         }
     },
     "m_Slots": [
@@ -4497,17 +4568,17 @@
     "m_Type": "UnityEditor.ShaderGraph.MultiplyNode",
     "m_ObjectId": "97548ffab4574b5b92d63bb8684922e4",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "3406849d913c4590aff16fbf36de788e"
     },
     "m_Name": "Multiply",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -4345.99951171875,
-            "y": 295.9998779296875,
+            "x": -4498.0,
+            "y": 313.99993896484377,
             "width": 208.0,
-            "height": 302.00030517578127
+            "height": 302.00006103515627
         }
     },
     "m_Slots": [
@@ -4539,17 +4610,17 @@
     "m_Type": "UnityEditor.ShaderGraph.GradientNoiseNode",
     "m_ObjectId": "97f5f4592a1f49dba973de4d86e49bb8",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "a93734698c1a401a9a3d5d58f93a5cdb"
     },
     "m_Name": "Gradient Noise",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -3545.0,
-            "y": 133.00006103515626,
-            "width": 208.000244140625,
-            "height": 301.9999694824219
+            "x": -3532.0,
+            "y": 127.0,
+            "width": 208.0,
+            "height": 302.0
         }
     },
     "m_Slots": [
@@ -4720,6 +4791,26 @@
     "m_PreviewMode": 0,
     "m_CustomColors": {
         "m_SerializableColors": []
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "9d78c6850ea74e35bf8b773ff5a6aeba",
+    "m_Title": "インクの強度マップ",
+    "m_Content": "ノイズからしきい値を引き算",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -2351.0,
+        "y": 595.0,
+        "width": 192.0,
+        "height": 100.0
+    },
+    "m_Group": {
+        "m_Id": ""
     }
 }
 
@@ -4929,20 +5020,31 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.GroupData",
+    "m_ObjectId": "a93734698c1a401a9a3d5d58f93a5cdb",
+    "m_Title": "インク用のノイズ生成",
+    "m_Position": {
+        "x": 10.0,
+        "y": 10.0
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.UVNode",
     "m_ObjectId": "ac4b95108bfd48f4bad75034b671c648",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "3406849d913c4590aff16fbf36de788e"
     },
     "m_Name": "UV",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -4972.0,
-            "y": -479.0000305175781,
+            "x": -4866.0,
+            "y": -486.0,
             "width": 145.0,
-            "height": 128.99993896484376
+            "height": 128.99996948242188
         }
     },
     "m_Slots": [
@@ -5148,9 +5250,9 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "r": 0.11267900466918946,
-        "g": 1.0,
-        "b": 0.0,
+        "r": 0.22253847122192384,
+        "g": 0.0,
+        "b": 1.0,
         "a": 0.0
     },
     "isMainColor": false,
@@ -5297,7 +5399,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 0.0,
+    "m_Value": 0.7929999828338623,
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
@@ -5612,7 +5714,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 0.5,
+    "m_Value": 0.9190000295639038,
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
@@ -5733,16 +5835,16 @@
     "m_Type": "UnityEditor.ShaderGraph.MultiplyNode",
     "m_ObjectId": "ceb7a47676df4e93a35baf352d911c2a",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "3406849d913c4590aff16fbf36de788e"
     },
     "m_Name": "Multiply",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -4199.0,
-            "y": -664.0000610351563,
-            "width": 208.000244140625,
+            "x": -4351.0,
+            "y": -646.0,
+            "width": 208.0,
             "height": 302.0
         }
     },
@@ -5799,17 +5901,17 @@
     "m_Type": "UnityEditor.ShaderGraph.TimeNode",
     "m_ObjectId": "d110b8eed17646d7a7b5fb86724b1492",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "3406849d913c4590aff16fbf36de788e"
     },
     "m_Name": "Time",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -4520.0,
-            "y": 157.00003051757813,
+            "x": -4672.0,
+            "y": 175.00001525878907,
             "width": 124.0,
-            "height": 173.00003051757813
+            "height": 172.99998474121095
         }
     },
     "m_Slots": [
@@ -5858,17 +5960,17 @@
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "d367953950d94458aea6a488344281bc",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "3406849d913c4590aff16fbf36de788e"
     },
     "m_Name": "Property",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -4343.0,
-            "y": -657.0,
+            "x": -4495.0,
+            "y": -639.0,
             "width": 120.0,
-            "height": 33.9998779296875
+            "height": 33.99993896484375
         }
     },
     "m_Slots": [
@@ -6499,7 +6601,7 @@
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "e696fe24de374c68b93496c5f247ead5",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "f86066d0eb4c44b5a8a23825d18e6beb"
     },
     "m_Name": "Property",
     "m_DrawState": {
@@ -6806,7 +6908,7 @@
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "f66cacf4c66846f18c0d823484c598e9",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "f86066d0eb4c44b5a8a23825d18e6beb"
     },
     "m_Name": "Property",
     "m_DrawState": {
@@ -6855,7 +6957,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 0.0,
+    "m_Value": 1.0,
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
@@ -6883,6 +6985,17 @@
     },
     "m_Labels": [],
     "m_Channel": 0
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.GroupData",
+    "m_ObjectId": "f86066d0eb4c44b5a8a23825d18e6beb",
+    "m_Title": "インクのしきい値",
+    "m_Position": {
+        "x": 10.0,
+        "y": 10.0
+    }
 }
 
 {
@@ -6962,7 +7075,7 @@
     "m_Type": "UnityEditor.ShaderGraph.LerpNode",
     "m_ObjectId": "fd025e3bc2584b72867159e6add13a88",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "a93734698c1a401a9a3d5d58f93a5cdb"
     },
     "m_Name": "Lerp",
     "m_DrawState": {

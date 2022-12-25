@@ -1,0 +1,14 @@
+{
+  "author": "gam0022",
+  "description": "Screenshot",
+  "displayName": "gam0022 Screenshot",
+  "keywords": [
+    "unity"
+  ],
+  "name": "com.gam0022.screenshot",
+  "unity": "2021.3",
+  "version": "1.0.0",
+  "dependencies": {
+  },
+  "hideInEditor": false
+}

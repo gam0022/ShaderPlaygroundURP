@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.gam0022.screenshot": {
+      "version": "file:gam0022.screenshot",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.burst": {
       "version": "1.7.3",
       "depth": 1,

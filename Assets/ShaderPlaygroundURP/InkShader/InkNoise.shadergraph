@@ -1538,7 +1538,7 @@
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.GroupData",
     "m_ObjectId": "11d973239cee4a1bb38a0b325ae80b19",
-    "m_Title": "powで値を調整",
+    "m_Title": "powでコントラスト調整",
     "m_Position": {
         "x": 10.0,
         "y": 10.0

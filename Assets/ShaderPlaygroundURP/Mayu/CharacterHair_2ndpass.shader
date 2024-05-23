@@ -83,7 +83,7 @@ Shader "Character/Hair_2ndpass"
             {
                 half4 col = tex2D(_BaseMap, IN.uv) * _BaseColor;
                 half3 forward = half3(0, 0, 1);// UNITY_MATRIX_M._m02_m12_m22;
-                col.a = clamp(1 - clamp(dot(forward, IN.viewWS), 0, 1), 0.5, 1);
+                col.a = clamp(1 - clamp(pow(dot(forward, IN.viewWS), 2), 0, 1), 0.3, 1);
                 return col;
             }
             ENDHLSL

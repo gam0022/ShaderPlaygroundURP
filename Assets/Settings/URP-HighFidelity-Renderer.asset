@@ -113,17 +113,16 @@ MonoBehaviour:
   m_Active: 0
   settings:
     passTag: RenderObjects
-    Event: 300
+    Event: 240
     filterSettings:
       RenderQueueType: 0
       LayerMask:
         serializedVersion: 2
         m_Bits: 1
-      PassNames:
-      - HairTransparent
-    overrideMaterial: {fileID: 0}
+      PassNames: []
+    overrideMaterial: {fileID: 2100000, guid: 3f0d06f26140d8d409bf81178809ed71, type: 2}
     overrideMaterialPassIndex: 0
-    overrideShader: {fileID: 0}
+    overrideShader: {fileID: 4800000, guid: 208a7d58e34238c4691538aa14997684, type: 3}
     overrideShaderPassIndex: 0
     overrideMode: 1
     overrideDepthState: 0

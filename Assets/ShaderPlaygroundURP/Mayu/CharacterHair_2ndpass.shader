@@ -26,7 +26,6 @@ Shader "Character/Hair_2ndpass"
             }
 
             Blend SrcAlpha OneMinusSrcAlpha
-            // ZTest Always
 
             Stencil {
                 Ref 2

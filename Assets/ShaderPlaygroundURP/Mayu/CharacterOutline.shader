@@ -23,8 +23,6 @@ Shader "Character/Outline"
 
         Pass
         {
-            // パスの用途はLightModeで指定
-            // 他にはShadowCasterやDepthOnlyなどがある
             Tags
             {
                 "LightMode" = "UniversalForward"
@@ -40,19 +38,14 @@ Shader "Character/Outline"
             Cull Front
             ZWrite On
 
-            // URPの場合はCGPROGRAMではなくHLSLPROGRAMを使う
             HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
 
-            // Core.hlslをインクルードする
-            // よく使われるHLSLのマクロや関数が定義されている
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 
             struct Attributes
             {
-                // OSはObject Spaceの略
-                // 変数名は何でもいいがURPでは座標の変数名にこのようにSuffixを付けるのが一般的
                 float4 positionOS : POSITION;
                 float2 uv : TEXCOORD0;
                 half4 color : COLOR;
@@ -67,8 +60,6 @@ Shader "Character/Outline"
 
             sampler2D _BaseMap;
 
-            // SRP Batcherによるバッチングを効かせたい場合にはCBUFFERブロック内に変数を記述する
-            // 詳しくは → https://light11.hatenadiary.com/entry/2021/07/15/201733
             CBUFFER_START(UnityPerMaterial)
             float4 _BaseMap_ST;
             half4 _BaseColor;
@@ -141,17 +132,17 @@ Shader "Character/Outline"
                     // FoV30°を補正なしの基準値にする
                     float tan15 = 0.26794919243;// tan(30/2)
 
-                    // NOTE: hosoda-sho iOSなどの一部のプラットフォームでは、UNITY_MATRIX_P._m11 がマイナスになるので、absをつける
+                    // NOTE: iOSなどの一部のプラットフォームでは、UNITY_MATRIX_P._m11 がマイナスになるので、absをつける
                     float fovCorrection = abs(UNITY_MATRIX_P._m11) * tan15;
 
                     // 画面分割のトリミングでアウトラインが太く見えるので、補正する
                     // float resolutionCorrection = saturate(_RenderTextureResolution.y / _ScreenParams.y);
                     float resolutionCorrection = 1.0;
 
-                    // NOTE: hosoda-sho _m11 からFoVを計算すれば、アスペクト比を渡す必要がなくなる
-                    // NOTE: hosoda-sho fovCorrection = UNITY_MATRIX_P._m11 * tan15;
-                    // NOTE: hosoda-sho しかし、iPhone上では _m11 から計算すると、アウトラインが表示されなくなることを確認した
-                    // TODO: hosoda-sho iPhone上の _m11 の値について調査
+                    // NOTE: _m11 からFoVを計算すれば、アスペクト比を渡す必要がなくなる
+                    // NOTE: fovCorrection = UNITY_MATRIX_P._m11 * tan15;
+                    // NOTE: しかし、iPhone上では _m11 から計算すると、アウトラインが表示されなくなることを確認した
+                    // TODO: iPhone上の _m11 の値について調査
 
                     // 距離とFoVを合成したキャラクターとカメラの距離。スクリーン上でどの大きさで見えるかを基準とした値
                     correction = distanceCorrection * resolutionCorrection / fovCorrection;
@@ -182,17 +173,15 @@ Shader "Character/Outline"
                 return position;
             }
 
-            Varyings vert(Attributes IN)
+            Varyings vert(Attributes input)
             {
-                Varyings OUT;
-                // 旧パイプラインではUnityObjectToClipPosだったのがURPではTransformObjectToHClipに
-                OUT.positionHCS = OutlineVertexPosition(IN);
-                OUT.uv = TRANSFORM_TEX(IN.uv, _BaseMap);
-                return OUT;
+                Varyings output;
+                output.positionHCS = OutlineVertexPosition(input);
+                output.uv = TRANSFORM_TEX(input.uv, _BaseMap);
+                return output;
             }
 
-            // HLSLPROGRAMの場合、fixed4は使えない
-            half4 frag(Varyings IN) : SV_Target
+            half4 frag(Varyings input) : SV_Target
             {
                 return _BaseColor;
             }

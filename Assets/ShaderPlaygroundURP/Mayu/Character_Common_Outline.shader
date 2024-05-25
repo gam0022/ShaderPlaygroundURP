@@ -5,10 +5,10 @@ Shader "Character/Common/Outline"
         _BaseMap("Base Map", 2D) = "white" {}
         _BaseColor("Base Color", Color) = (1, 1, 1, 1)
 
-        // _OutlineColor ("Color", color) = (0.0, 0.0, 0.0, 1.0)  // TODO: 定数化
-        _OutlineWidthBase ("Width Base", float) = 1  // TODO: /1000 して定数化
-        _OutlineCorrectionDistance ("Correction Distance", float) = 0.9  // TODO: 定数化
-        _OutlineCorrectionRate ("Correction Rate", range(0,1)) = 0.5  // TODO: 定数化
+        _OutlineColor ("Color", color) = (0.2, 0.2, 0.2, 1.0)
+        _OutlineWidthBase ("Width Base", float) = 1
+        _OutlineCorrectionDistance ("Correction Distance", float) = 0.9
+        _OutlineCorrectionRate ("Correction Rate", range(0,1)) = 0.5
     }
 
     SubShader
@@ -63,6 +63,7 @@ Shader "Character/Common/Outline"
             CBUFFER_START(UnityPerMaterial)
             float4 _BaseMap_ST;
             half4 _BaseColor;
+            half4 _OutlineColor;
             float _OutlineWidthBase;
             float _OutlineCorrectionDistance;
             float _OutlineCorrectionRate;
@@ -183,7 +184,7 @@ Shader "Character/Common/Outline"
 
             half4 frag(Varyings input) : SV_Target
             {
-                return _BaseColor;
+                return tex2D(_BaseMap, input.uv) * _BaseColor * _OutlineColor;
             }
             ENDHLSL
         }

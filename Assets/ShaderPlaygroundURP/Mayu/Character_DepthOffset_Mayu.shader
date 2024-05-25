@@ -57,12 +57,14 @@ Shader "Character/DepthOffset/Mayu"
             Varyings vert(Attributes input)
             {
                 Varyings output;
+
+                // View空間上でDepth Offset
+                // https://zhuanlan.zhihu.com/p/696515379
                 float3 positionWS = TransformObjectToWorld(input.positionOS.xyz);
                 float3 positionVS = mul(UNITY_MATRIX_V, float4(positionWS, 1.0)).xyz;
                 positionVS.z += _DepthOffset;
                 float4 positionHCS = TransformWViewToHClip(positionVS);
                 float depth = positionHCS.z / positionHCS.w;
-
                 output.positionHCS = TransformObjectToHClip(input.positionOS.xyz);
                 output.positionHCS.z = depth * output.positionHCS.w;
 

@@ -1,4 +1,4 @@
-Shader "Character/Hair_2ndpass"
+Shader "Character/Common/Base"
 {
     Properties
     {
@@ -10,10 +10,10 @@ Shader "Character/Hair_2ndpass"
     {
         Tags
         {
+            "RenderType" = "Opaque"
             "RenderPipeline" = "UniversalPipeline"
             "IgnoreProjector" = "True"
-            "RenderType" = "Transparent"
-            "Queue" = "Transparent"
+            "Queue" = "Geometry"
         }
 
         Pass
@@ -21,15 +21,6 @@ Shader "Character/Hair_2ndpass"
             Tags
             {
                 "LightMode" = "UniversalForward"
-            }
-
-            Blend SrcAlpha OneMinusSrcAlpha
-
-            Stencil {
-                Ref 2
-                Comp Equal
-                Pass Keep
-                ZFail Keep
             }
 
             HLSLPROGRAM
@@ -48,7 +39,6 @@ Shader "Character/Hair_2ndpass"
             {
                 float4 positionHCS : SV_POSITION;
                 float2 uv : TEXCOORD0;
-                half3 viewWS : VIEW_WS;
             };
 
             sampler2D _BaseMap;
@@ -63,17 +53,12 @@ Shader "Character/Hair_2ndpass"
                 Varyings output;
                 output.positionHCS = TransformObjectToHClip(input.positionOS.xyz);
                 output.uv = TRANSFORM_TEX(input.uv, _BaseMap);
-                float3 positionWS = TransformObjectToWorld(input.positionOS.xyz);
-                output.viewWS = normalize(GetWorldSpaceViewDir(positionWS));
                 return output;
             }
 
             half4 frag(Varyings input) : SV_Target
             {
-                half4 col = tex2D(_BaseMap, input.uv) * _BaseColor;
-                half3 forward = half3(0, 0, 1);// UNITY_MATRIX_M._m02_m12_m22;
-                col.a = clamp(1 - clamp(pow(dot(forward, input.viewWS), 2), 0, 1), 0.3, 1);
-                return col;
+                return tex2D(_BaseMap, input.uv) * _BaseColor;
             }
             ENDHLSL
         }

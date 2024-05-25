@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: toko_hair_2ndpass
+  m_Name: toko_stencil_hair_2ndpass
   m_Shader: {fileID: 4800000, guid: 73ce87490f75487478f218075284bfc7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0

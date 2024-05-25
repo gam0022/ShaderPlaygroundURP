@@ -1,4 +1,4 @@
-Shader "Character/Hair"
+Shader "Character/Stencil/Mayu"
 {
     Properties
     {
@@ -10,9 +10,9 @@ Shader "Character/Hair"
     {
         Tags
         {
+            "RenderType" = "Opaque"
             "RenderPipeline" = "UniversalPipeline"
             "IgnoreProjector" = "True"
-            "RenderType" = "Opaque"
             "Queue" = "Geometry"
         }
 
@@ -25,8 +25,8 @@ Shader "Character/Hair"
 
             Stencil {
                 Ref 2
-                Comp NotEqual
-                Pass Keep
+                Comp Always
+                Pass Replace
                 ZFail Keep
             }
 

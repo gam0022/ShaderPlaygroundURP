@@ -1,4 +1,4 @@
-Shader "Character/Base"
+Shader "Character/Stencil/Hair"
 {
     Properties
     {
@@ -10,9 +10,9 @@ Shader "Character/Base"
     {
         Tags
         {
-            "RenderType" = "Opaque"
             "RenderPipeline" = "UniversalPipeline"
             "IgnoreProjector" = "True"
+            "RenderType" = "Opaque"
             "Queue" = "Geometry"
         }
 
@@ -21,6 +21,13 @@ Shader "Character/Base"
             Tags
             {
                 "LightMode" = "UniversalForward"
+            }
+
+            Stencil {
+                Ref 2
+                Comp NotEqual
+                Pass Keep
+                ZFail Keep
             }
 
             HLSLPROGRAM

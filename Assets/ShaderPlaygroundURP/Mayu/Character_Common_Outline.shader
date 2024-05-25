@@ -28,13 +28,6 @@ Shader "Character/Common/Outline"
                 "LightMode" = "UniversalForward"
             }
 
-            Stencil {
-                Ref 2
-                Comp NotEqual
-                Pass Keep
-                ZFail Keep
-            }
-
             Cull Front
             ZWrite On
 
@@ -169,7 +162,8 @@ Shader "Character/Common/Outline"
                 position.xy += offset * _OUTLINE_WIDTH_BASE * v.color.r * correction;
 
                 // 頂点カラーのGで押し込み量を調整する
-                ShoveOutlineDepth(position.z, v.color.g);
+                // ShoveOutlineDepth(position.z, v.color.g);
+                ShoveOutlineDepth(position.z, 0.8);
 
                 return position;
             }

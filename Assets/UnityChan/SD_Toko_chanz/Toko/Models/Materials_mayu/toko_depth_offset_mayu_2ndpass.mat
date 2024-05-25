@@ -91,6 +91,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
+    - _DepthOffset: 0.1
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -99,7 +100,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.4472136
     - _GlossyReflections: 1
-    - _MayuOffsetZ: -1
+    - _MayuOffsetZ: -0.3
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1

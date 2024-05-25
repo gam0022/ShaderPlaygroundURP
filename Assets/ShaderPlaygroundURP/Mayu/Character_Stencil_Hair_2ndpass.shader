@@ -71,7 +71,7 @@ Shader "Character/Stencil/Hair_2ndpass"
             half4 frag(Varyings input) : SV_Target
             {
                 half4 col = tex2D(_BaseMap, input.uv) * _BaseColor;
-                half3 forward = half3(0, 0, -1);// UNITY_MATRIX_M._m02_m12_m22;
+                half3 forward = half3(0, 0, 1);// UNITY_MATRIX_M._m02_m12_m22;
                 col.a = clamp(1 - clamp(pow(saturate(dot(forward, input.viewWS)), 2), 0, 1), 0.3, 1);
                 return col;
             }

@@ -4,7 +4,7 @@ Shader "Character/DepthOffset/Mayu"
     {
         _BaseMap("Base Map", 2D) = "white" {}
         _BaseColor("Base Color", Color) = (1, 1, 1, 1)
-        _MayuOffsetZ ("Mayu Offset Z", Float) = 0.1
+        _DepthOffset ("Depth Offset", Float) = 0.1
     }
 
     SubShader
@@ -51,15 +51,15 @@ Shader "Character/DepthOffset/Mayu"
             CBUFFER_START(UnityPerMaterial)
             float4 _BaseMap_ST;
             half4 _BaseColor;
-            float _MayuOffsetZ;
+            float _DepthOffset;
             CBUFFER_END
 
             Varyings vert(Attributes input)
             {
                 Varyings output;
-                float3 positionWS = TransformViewToWorld(input.positionOS.xyz);
+                float3 positionWS = TransformObjectToWorld(input.positionOS.xyz);
                 float3 positionVS = mul(UNITY_MATRIX_V, float4(positionWS, 1.0)).xyz;
-                positionVS.z += _MayuOffsetZ;
+                positionVS.z += _DepthOffset;
                 float4 positionHCS = TransformWViewToHClip(positionVS);
                 float depth = positionHCS.z / positionHCS.w;
 
@@ -74,8 +74,8 @@ Shader "Character/DepthOffset/Mayu"
             half4 frag(Varyings input) : SV_Target
             {
                 half4 col = tex2D(_BaseMap, input.uv) * _BaseColor;
-                half3 forward = half3(0, 0, -1);// UNITY_MATRIX_M._m02_m12_m22;
-                col.a = clamp(pow(saturate(dot(forward, input.viewWS)), 4), 0, 0.7);
+                half3 forward = half3(0, 0, 1);// UNITY_MATRIX_M._m02_m12_m22;
+                col.a = clamp(pow(saturate(dot(forward, input.viewWS)), 2), 0, 0.7);
                 return col;
             }
             ENDHLSL

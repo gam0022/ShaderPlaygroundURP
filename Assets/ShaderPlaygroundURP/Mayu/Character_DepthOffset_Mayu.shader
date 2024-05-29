@@ -62,10 +62,15 @@ Shader "Character/DepthOffset/Mayu"
                 // https://zhuanlan.zhihu.com/p/696515379
                 float3 positionWS = TransformObjectToWorld(input.positionOS.xyz);
                 float3 positionVS = mul(UNITY_MATRIX_V, float4(positionWS, 1.0)).xyz;
+
+                // View空間上でDepth Offset
                 positionVS.z += _DepthOffset;
+
                 float4 positionHCS = TransformWViewToHClip(positionVS);
                 float depth = positionHCS.z / positionHCS.w;
                 output.positionHCS = TransformObjectToHClip(input.positionOS.xyz);
+
+                // クリッピング空間上でオフセットされた深度を適用
                 output.positionHCS.z = depth * output.positionHCS.w;
 
                 output.uv = TRANSFORM_TEX(input.uv, _BaseMap);

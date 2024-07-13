@@ -227,20 +227,20 @@ Shader "LTC/Quad"
                 T2 = cross(N, T1);
 
                 // rotate area light in (T1, T2, N) basis
-                Minv = mul(Minv, transpose(float3x3(T1, T2, N)));
+                Minv = mul(transpose(float3x3(T1, T2, N)), Minv);
 
                 // polygon (allocate 5 vertices for clipping)
                 float3 L[5];
-                L[0] = mul(Minv, points[0] - P);
-                L[1] = mul(Minv, points[1] - P);
-                L[2] = mul(Minv, points[2] - P);
-                L[3] = mul(Minv, points[3] - P);
-                L[4] = (0).xxx;
+                L[0] = mul(points[0] - P, Minv);
+                L[1] = mul(points[1] - P, Minv);
+                L[2] = mul(points[2] - P, Minv);
+                L[3] = mul(points[3] - P, Minv);
+                L[4] = (1).xxx;
 
                 // integrate
                 float sum = 0.0;
 
-                if (_ClipLess > 0)
+                if (_ClipLess)
                 {
                     float3 dir = points[0].xyz - P;
                     float3 lightNormal = cross(points[1] - points[0], points[3] - points[0]);

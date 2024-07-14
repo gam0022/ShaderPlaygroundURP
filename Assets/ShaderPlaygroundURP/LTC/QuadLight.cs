@@ -4,6 +4,7 @@ using UnityEngine;
 using static Unity.Mathematics.math;
 using Unity.Mathematics;
 
+[ExecuteAlways]
 public class QuadLight : MonoBehaviour
 {
     public Vector4[] points = new Vector4[4];

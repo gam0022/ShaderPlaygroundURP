@@ -28,6 +28,23 @@
 
 UnityちゃんシリーズのSDトーコちゃんの3Dモデルを使わせていただきました。
 
+## LTC（Linearly Transformed Cosines）によるエリアライト
+
+Eric HeitzさんがSIGGRAPH 2016で発表したエリアライトをリアルタイムに計算する手法をURP上で実装しました。
+
+[![LTC_roughness.gif](imgs/LTC_roughness.gif)](imgs/LTC_roughness.gif)
+
+[![LTC_scale_x.gif](imgs/LTC_scale_x.gif)](imgs/LTC_scale_x.gif)
+
+[![LTC_rotate_y.gif](imgs/LTC_rotate_y.gif)](imgs/LTC_rotate_y.gif)
+
+[![LTC_rotate_x.gif](imgs/LTC_rotate_x.gif)](imgs/LTC_rotate_x.gif)
+
+- 論文著者のページ
+  - [Real-Time Polygonal-Light Shading with Linearly Transformed Cosines | Eric Heitz's Research Page](https://eheitzresearch.wordpress.com/415-2/)
+- 解説スライド
+  - [LTC（Linearly Transformed Cosines）によるエリアライトのUnity URP実装 | ゆるゆるシェーダー交流会](https://docs.google.com/presentation/d/1OAey5wGU7BIKw7YOpILKz-Ymqv-jysgFeWpvJVVdXm0/edit?usp=sharing)
+
 # License
 
 ソースコードはMITライセンスとしますが、アセットについてはプロジェクトファイル内にあるLicenseファイルにしたがってください。
